@@ -1,6 +1,8 @@
-# JasperReports Server CE Edition Docker Container
+# JasperReports Server CE Edition Docker Container - Minified (alpine version)
 
 The Docker Image aims to quickly get up-and-running a JasperReports Server for a development environment.
+
+This image is build based in [retriever/jasperserver](https://github.com/retrievercommunications/docker-jasperserver) powered by [Nic Grange](mailto:nicolas.grange@retrievercommunications.com).
 
 [![](https://images.microbadger.com/badges/image/retriever/jasperserver.svg)](https://microbadger.com/images/retriever/jasperserver "Get your own image badge on microbadger.com")
 

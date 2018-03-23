@@ -1,15 +1,18 @@
-FROM tomcat:7
-MAINTAINER Nic Grange nicolas.grange@retrievercommunications.com 
+FROM tomcat:7-alpine
+MAINTAINER Pedro Robson Leão pedro.leao@gmail.com
 
 ENV JASPERSERVER_VERSION 6.4.0
 
 # Execute all in one layer so that it keeps the image as small as possible
 RUN wget "https://sourceforge.net/projects/jasperserver/files/JasperServer/JasperReports%20Server%20Community%20Edition%20${JASPERSERVER_VERSION}/TIB_js-jrs-cp_${JASPERSERVER_VERSION}_bin.zip/download" \
          -O /tmp/jasperserver.zip  && \
+    mkdir -p /usr/src && \
+    apk add bash && \
     unzip /tmp/jasperserver.zip -d /usr/src/ && \
     rm /tmp/jasperserver.zip && \
     mv /usr/src/jasperreports-server-cp-${JASPERSERVER_VERSION}-bin /usr/src/jasperreports-server && \
-    rm -r /usr/src/jasperreports-server/samples
+    rm -vr /usr/src/jasperreports-server/docs && \
+    rm -vr /usr/src/jasperreports-server/samples
 
 # To speed up local testing
 # Download manually the jasperreport server release to working dir
@@ -23,14 +26,15 @@ RUN wget "https://sourceforge.net/projects/jasperserver/files/JasperServer/Jaspe
 # Used to wait for the database to start before connecting to it
 # This script is from https://github.com/vishnubob/wait-for-it
 # as recommended by https://docs.docker.com/compose/startup-order/
-ADD wait-for-it.sh /wait-for-it.sh
+# ADD wait-for-it.sh /wait-for-it.sh
 
 # Used to bootstrap JasperServer the first time it runs and start Tomcat each
 ADD entrypoint.sh /entrypoint.sh
 
 #Execute all in one layer so that it keeps the image as small as possible
-RUN chmod a+x /entrypoint.sh && \
-    chmod a+x /wait-for-it.sh
+# RUN chmod a+x /entrypoint.sh && \
+    # chmod a+x /wait-for-it.sh
+RUN chmod a+x /entrypoint.sh
 
 # This volume allows JasperServer export zip files to be automatically imported when bootstrapping
 VOLUME ["/jasperserver-import"]

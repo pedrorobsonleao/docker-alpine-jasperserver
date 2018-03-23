@@ -2,7 +2,7 @@
 set -e
 
 # wait upto 30 seconds for the database to start before connecting
-/wait-for-it.sh $DB_HOST:$DB_PORT -t 30
+# /wait-for-it.sh $DB_HOST:$DB_PORT -t 30
 
 # check if we need to bootstrap the JasperServer
 if [ ! -d "$CATALINA_HOME/webapps/jasperserver" ]; then
