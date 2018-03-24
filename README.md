@@ -4,7 +4,7 @@ The Docker Image aims to quickly get up-and-running a JasperReports Server for a
 
 This image is build based in [retriever/jasperserver](https://github.com/retrievercommunications/docker-jasperserver) powered by [Nic Grange](mailto:nicolas.grange@retrievercommunications.com).
 
-[![](https://images.microbadger.com/badges/image/pedrorobsonleao/alpine-jasperserver.svg)](https://microbadger.com/images/pedrorobsonleao/alpine-jasperserver "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/pedrorobsonleao/alpine-jasperserver.svg)](https://microbadger.com/images/pedrorobsonleao/alpine-jasperserver "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/pedrorobsonleao/docker-alpine-jasperserver.svg)](https://microbadger.com/images/pedrorobsonleao/docker-docker-alpine-jasperserver "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/pedrorobsonleao/docker-alpine-jasperserver.svg)](https://microbadger.com/images/pedrorobsonleao/docker-alpine-jasperserver "Get your own version badge on microbadger.com")
 ## Start the Container
 
 ### Using Command Line
@@ -50,7 +50,7 @@ Use `docker build -t pedrorobsonleao/docker-jasperserver .`
 See comments in Dockerfile to speed up testing by not having to download the jasperserver release each time.
 
 ## How to release a new image version
-This repo is setup to trigger an automated build of the image [pedrorobsonleao/alpine-jasperserver](https://hub.docker.com/r/pedrorobsonleao/alpine-jasperserver/) on Docker Hub.
+This repo is setup to trigger an automated build of the image [pedrorobsonleao/docker-alpine-jasperserver](https://hub.docker.com/r/pedrorobsonleao/docker-alpine-jasperserver/) on Docker Hub.
 
 To make a new official version of the image, just push a git Tag using the naming convention `major.minor.iteration` where:
 * major and minor line up with the included version of jasperserver 
