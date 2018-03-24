@@ -45,12 +45,12 @@ This image includes:
 * [Web Service Data Source plugin](https://community.jaspersoft.com/project/web-service-data-source) contributed by [@chiavegatto](https://github.com/chiavegatto)
 
 ## How to build this image
-Use `docker build -t retriever/jasperserver .` 
+Use `docker build -t pedrorobsonleao/docker-jasperserver .` 
 
 See comments in Dockerfile to speed up testing by not having to download the jasperserver release each time.
 
 ## How to release a new image version
-This repo is setup to trigger an automated build of the image [retriever/jaserpserver](https://hub.docker.com/r/retriever/jasperserver/) on Docker Hub.
+This repo is setup to trigger an automated build of the image [pedrorobsonleao/docker-jasperserver](https://hub.docker.com/r/pedrorobsonleao/docker-jasperserver/) on Docker Hub.
 
 To make a new official version of the image, just push a git Tag using the naming convention `major.minor.iteration` where:
 * major and minor line up with the included version of jasperserver 
