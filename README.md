@@ -4,8 +4,7 @@ The Docker Image aims to quickly get up-and-running a JasperReports Server for a
 
 This image is build based in [retriever/jasperserver](https://github.com/retrievercommunications/docker-jasperserver) powered by [Nic Grange](mailto:nicolas.grange@retrievercommunications.com).
 
-[![](https://images.microbadger.com/badges/image/retriever/jasperserver.svg)](https://microbadger.com/images/retriever/jasperserver "Get your own image badge on microbadger.com")
-
+[![](https://images.microbadger.com/badges/image/pedrorobsonleao/alpine-jasperserver.svg)](https://microbadger.com/images/pedrorobsonleao/alpine-jasperserver "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/pedrorobsonleao/alpine-jasperserver.svg)](https://microbadger.com/images/pedrorobsonleao/alpine-jasperserver "Get your own version badge on microbadger.com")
 ## Start the Container
 
 ### Using Command Line
