@@ -45,7 +45,7 @@ This image includes:
 * [Web Service Data Source plugin](https://community.jaspersoft.com/project/web-service-data-source) contributed by [@chiavegatto](https://github.com/chiavegatto)
 
 ## How to build this image
-Use `docker build -t pedrorobsonleao/docker-jasperserver .` 
+Use `docker build -t pedrorobsonleao/docker-alpine-jasperserver .` 
 
 See comments in Dockerfile to speed up testing by not having to download the jasperserver release each time.
 
