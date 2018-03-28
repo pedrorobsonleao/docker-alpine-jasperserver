@@ -4,17 +4,17 @@ The Docker Image aims to quickly get up-and-running a JasperReports Server for a
 
 This image is build based in [retriever/jasperserver](https://github.com/retrievercommunications/docker-jasperserver) powered by [Nic Grange](mailto:nicolas.grange@retrievercommunications.com).
 
-[![](https://images.microbadger.com/badges/image/pedrorobsonleao/docker-alpine-jasperserver.svg)](https://microbadger.com/images/pedrorobsonleao/docker-docker-alpine-jasperserver "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/pedrorobsonleao/docker-alpine-jasperserver.svg)](https://microbadger.com/images/pedrorobsonleao/docker-alpine-jasperserver "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/pedrorobsonleao/jasperserver.svg)](https://microbadger.com/images/pedrorobsonleao/jasperserver "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/pedrorobsonleao/jasperserver.svg)](https://microbadger.com/images/pedrorobsonleao/jasperserver "Get your own version badge on microbadger.com")
 ## Start the Container
 
 ### Using Command Line
 
 To start the JasperServer container you'll need to pass in 5 environment variables and link it to either a MySQL or Postgres container.
 
-E.g. `docker run -d --name jasperserver -e DB_TYPE=mysql -e DB_HOST=db -e DB_PORT=3306 -e DB_USER=root -e DB_PASSWORD=mysql --link jasperserver_mysql:db -p 8080:8080 pedrorobsonleao/docker-alpine-jasperserver`
+E.g. `docker run -d --name jasperserver -e DB_TYPE=mysql -e DB_HOST=db -e DB_PORT=3306 -e DB_USER=root -e DB_PASSWORD=mysql --link jasperserver_mysql:db -p 8080:8080 pedrorobsonleao/jasperserver:6.4.2-alpine`
 
 If you haven't got an existing MySQL or Postgres container then you can easily create one:
-`docker run -d --name jasperserver_mysql -e MYSQL_ROOT_PASSWORD=mysql mysql`
+`docker run -d --name jasperserver_mysql -e MYSQL_ROOT_PASSWORD=mysql leafney/docker-alpine-mysql`
 
 
 ### Using Docker-compose
@@ -37,7 +37,7 @@ Note: To install Docker-compose see the [releases page](https://github.com/docke
 
 ## Image Features
 This image includes:
-* JasperServer CE Edition version 6.4.0
+* JasperServer CE Edition version 6.4.2
 * IBM DB2 JDBC driver version 4.19.26
 * MySQL JDBC driver version 5.1.44
 * A volume called '/import' that allows automatic importing of export zip files from another JasperReports Server
@@ -45,12 +45,12 @@ This image includes:
 * [Web Service Data Source plugin](https://community.jaspersoft.com/project/web-service-data-source) contributed by [@chiavegatto](https://github.com/chiavegatto)
 
 ## How to build this image
-Use `docker build -t pedrorobsonleao/docker-alpine-jasperserver .` 
+Use `docker build -t pedrorobsonleao/jasperserver:6.4.2-alpine .` 
 
 See comments in Dockerfile to speed up testing by not having to download the jasperserver release each time.
 
 ## How to release a new image version
-This repo is setup to trigger an automated build of the image [pedrorobsonleao/docker-alpine-jasperserver](https://hub.docker.com/r/pedrorobsonleao/docker-alpine-jasperserver/) on Docker Hub.
+This repo is setup to trigger an automated build of the image [pedrorobsonleao/jasperserver:6.4.2-alpine](https://hub.docker.com/r/pedrorobsonleao/jasperserver/) on Docker Hub.
 
 To make a new official version of the image, just push a git Tag using the naming convention `major.minor.iteration` where:
 * major and minor line up with the included version of jasperserver 

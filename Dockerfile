@@ -1,7 +1,7 @@
-FROM tomcat:7-alpine
-MAINTAINER Pedro Robson Leão pedro.leao@gmail.com
+FROM tomcat:8-alpine
+LABEL maintainer Pedro Robson Leão pedro.leao@gmail.com
 
-ENV JASPERSERVER_VERSION 6.4.0
+ENV JASPERSERVER_VERSION 6.4.2
 
 # Execute all in one layer so that it keeps the image as small as possible
 RUN wget "https://sourceforge.net/projects/jasperserver/files/JasperServer/JasperReports%20Server%20Community%20Edition%20${JASPERSERVER_VERSION}/TIB_js-jrs-cp_${JASPERSERVER_VERSION}_bin.zip/download" \
